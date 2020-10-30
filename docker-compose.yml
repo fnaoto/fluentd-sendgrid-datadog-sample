@@ -16,3 +16,5 @@ services:
       - ./fluent/fluent.conf:/etc/fluent/fluent.conf
     ports:
       - 9191:9191
+    environment:
+      - DD_API_KEY
