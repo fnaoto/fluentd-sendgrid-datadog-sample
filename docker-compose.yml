@@ -4,8 +4,8 @@ services:
   nginx:
     image: nginx:alpine
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./nginx/conf.d/:/etc/nginx/conf.d/
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:cached
+      - ./nginx/conf.d/:/etc/nginx/conf.d/:cached
     links:
       - fluentd
     ports:
@@ -13,7 +13,7 @@ services:
   fluentd:
     build: .
     volumes:
-      - ./fluent/fluent.conf:/etc/fluent/fluent.conf
+      - ./fluent/fluent.conf:/fluentd/etc/fluent.conf:cached
     ports:
       - 9191:9191
     environment:
