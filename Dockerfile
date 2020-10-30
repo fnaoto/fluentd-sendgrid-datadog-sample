@@ -1,6 +1,5 @@
-FROM fluentd:latest
+FROM fluent/fluentd:v0.12
 
 USER root
-RUN gem install -N \
-      fluent-plugin-sendgrid-event \
-      fluent-plugin-datadog
+RUN gem install -N fluent-plugin-sendgrid-event -v 0.0.5
+RUN gem install -N fluent-plugin-datadog -v 0.11.1
