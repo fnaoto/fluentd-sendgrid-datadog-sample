@@ -1,7 +1,6 @@
 [
   {
-    "event": "delivered",
-    "response": "250 OK",
+    "event": "dropped",
     "sg_event_id": "sendgrid_internal_event_id",
     "sg_message_id": "sendgrid_internal_message_id",
     "email": "email@example.com",
@@ -12,14 +11,6 @@
       "category1",
       "category2"
     ],
-    "newsletter": {
-      "newsletter_user_list_id": "10557865",
-      "newsletter_id": "1943530",
-      "newsletter_send_id": "2308608"
-    },
-    "asm_group_id": 1,
-    "ip": "127.0.0.1",
-    "tls": "1",
-    "cert_err": "1"
+    "reason": "Bounced Address"
   }
 ]

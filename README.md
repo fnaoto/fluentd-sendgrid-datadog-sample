@@ -11,10 +11,16 @@ $ docker-compose up -d
 ## Check logs
 
 ```
-$ curl localhost:80/ok
+$ curl -X POST localhost:80/ok
 $ docker-compose logs fluentd
 
 fluentd_1  | - -> /ok
+```
+
+## Test sendgrid plugin
+
+```
+$ curl -X POST -d @test/all.json localhost:80
 ```
 
 ## Send logs to datadog
