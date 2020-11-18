@@ -1,14 +1,15 @@
-# fluentd-sendgrid-datadog-sample
-Send data from SendGird to DataDog Via Fluentd sample docker image.
+# fluentd-sendgrid-to-datadog
 
-## How to use
+Fluentdを使って、sendgridから送られてくるメトリクスを集計して、DataDogに送ります。
 
-```
-$ docker-compose build # just one time
+## ローカルでの開発・検証方法
+
+```sh
+$ docker-compose build
 $ docker-compose up -d
 ```
 
-## Check logs
+## ログの確認方法
 
 ```
 $ curl -X POST localhost:80/ok
@@ -17,13 +18,13 @@ $ docker-compose logs fluentd
 fluentd_1  | - -> /ok
 ```
 
-## Test sendgrid plugin
+## テスト方法
 
 ```
 $ curl -X POST -d @test/all.json localhost:80
 ```
 
-## Send logs to datadog
+## ローカル環境からDataDogにデータを送る
 
 ```
 $ export DD_API_KEY="<DataDog API Key>"

@@ -1,0 +1,5 @@
+FROM nginx:alpine
+
+RUN apk add curl
+
+ADD nginx/ /etc/nginx/
